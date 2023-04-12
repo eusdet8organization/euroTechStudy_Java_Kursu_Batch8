@@ -6,5 +6,6 @@ public class TlhBank3 {
         Constr obje1=new Constr("hasan","ismet",8); //overloading
 
 
+
     }
 }
