@@ -1,4 +1,4 @@
-package Gun_37_ArrayList;
+package Day_37_ArrayList;
 
 import java.util.ArrayList;
 import java.util.Arrays;
