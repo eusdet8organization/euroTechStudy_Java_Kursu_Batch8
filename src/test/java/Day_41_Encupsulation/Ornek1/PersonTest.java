@@ -14,7 +14,7 @@ public class PersonTest {
 
 
         Person p2=new Person();
-        p2.setName("87656AB98");
+        p2.setName("Ayse98");
         p2.setAge(-25);
         p2.setGender('M');
         System.out.println("p2 = " + p2);

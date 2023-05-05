@@ -16,11 +16,14 @@ public class Person {
     }
 
     public void setName(String name) {
-        String str=name.toLowerCase();
-        for(int i=0; i<str.length();i++) {
-            if((str.charAt(i)>='a' && str.charAt(i)<='z'))
-                this.name=name;
+        String str = name.toLowerCase();
+        String newStr="";
+        for (int i = 0; i < str.length(); i++) {
+            if ((str.charAt(i) >= 'a' && str.charAt(i) <= 'z'))
+                newStr+=str.charAt(i);
         }
+        if (newStr.length()==name.length())
+            this.name=name;
     }
 //Biz this dedigimiz yas degiskenini mutlak degerli
 // bir sekilde tanimladik
@@ -46,10 +49,21 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", gender=" + gender +
-                '}';
+
+        String flag="Person{";
+        if (name!=null)
+            flag+="name='" + name + '\'' ;
+
+
+
+
+        return flag;
+
+
+//        return "Person{" +
+//                "name='" + name + '\'' +
+//                ", age=" + age +
+//                ", gender=" + gender +
+//                '}';
     }
 }
