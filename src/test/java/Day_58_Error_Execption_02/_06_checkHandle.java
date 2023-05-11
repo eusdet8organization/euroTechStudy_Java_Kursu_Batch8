@@ -9,7 +9,7 @@ public class _06_checkHandle {
     // sıcaklığı 10 dan küçük ise IOException hatası oluşturunuz
     // mainden çağırarak hatayı kontrol ediniz.
 
-    public static void main(String[] args) {
+    public static void main(String[] args)  {
 
         Scanner oku=new Scanner(System.in);
         System.out.println("Hava sicakligi = ");
@@ -24,25 +24,38 @@ public class _06_checkHandle {
 //        }
 
         //Method icerisinde trow ile hatayi handle ettik
-        sicaklikKontrol(sicaklik);
+        try {
+            sicaklikKontrol(sicaklik);
+            System.out.println("hata sonrasi");
+            //sleep1(4);
+        }catch (IllegalArgumentException e){
+            System.out.println("e.getMessage() = " + e.getMessage());
+        }
+
 
 
     }
 
 
-    public static void sicaklikKontrol(int sicaklik){
-        try {
+    public static void sicaklikKontrol(int sicaklik) {
 
             if (sicaklik <= 10) {
-                throw new Exception("Hava gercekten soguk disari cikmayin");
+                throw new IllegalArgumentException("Hava gercekten soguk disari cikmayin");
             } else {
-                throw new Exception("Disarida basketbol oyanayabilirsiniz");
+                throw new IllegalArgumentException("Disarida basketbol oyanayabilirsiniz");
             }
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
 
 
+    }
+
+
+
+    public static void sleep1(int saniye) throws InterruptedException {
+        Thread.sleep(1000*saniye);
+    }
+
+    public static void sleep2() throws InterruptedException {
+        sleep1(4);
     }
 
 }
