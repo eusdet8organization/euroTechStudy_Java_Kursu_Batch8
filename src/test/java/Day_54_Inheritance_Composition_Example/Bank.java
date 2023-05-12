@@ -1,28 +1,30 @@
 package Day_54_Inheritance_Composition_Example;
 
-public class Bank {
+public abstract class Bank {
     //VARIABLES//////////////////////////
     private double currentBalance;//ilk hesap acildi, kapansaya kadar hesap dengesini tutar (hesap kaydi)
-    private String accountType;//hesap turu
+   // private String accountType;//hesap turu
     boolean isAccounClosed=true; //Hesap KAPALI MI!! //KAPATILDI MI
 
     private double depositeBonus;//para yatirma kosullarina bagli olarak verilen BONUS para miktari
     private double withdravExpence;//para cekme kosullarina bagli olarak islem ucreti (Hesap turune bagli)
     private double returnRate;//Hesap kapatildiginda alinacak KAR ORANI (current Balance ile carpilarak hes.)
 
+    private double cariHesapBalance;
+
 
 
 
     //CONSTRUCTOR//////////////////////////
-    public Bank(double currentBalance, String accountType) {
+    public Bank(double currentBalance, AccountType accountType) {
 //        this.currentBalance = currentBalance;
 //        this.accountType = accountType;
         //encapsulation ile constructor olusturduk
         this.setCurrentBalance(currentBalance);
-        this.setAccountType(accountType);
+      //  this.setAccountType(accountType);
         //getClass().getSimpleName()--> Obje create edilen constructor in oldugu class ismini cagirir
         //Bu java OBJE classina ait framework (kutuphane bilgisini cagirdik)
-        System.out.println(getClass().getSimpleName()+ " `a HOSGELDINIZ!! \nHesap Turu : "+this.getAccountType());
+        System.out.println(getClass().getSimpleName()+ " `a HOSGELDINIZ!! \nHesap Turu : "+accountType);
         this.isAccounClosed=false;//Hesap acildi
     }
 
@@ -64,6 +66,25 @@ public class Bank {
     }
 
 
+    public void mevcutHesapKapatma(){
+        //Benim bir mevduat hesabim var, Bu mevduat hesabina bagli yatirim hesaplarim var.
+        //Bu yatirim hesaplari kapatildiginda, yatirim hesabindaki miktar ve getirisi ile birlikte mevduat
+        // hesaba aktarilir.
+        setCariHesapBalance(getCurrentBalance() * getReturnRate());
+        setCurrentBalance(0);//hesabi kapatip KAR orani ile carpip, KAR+Mevcut miktari Mevduata aktardik, hesap sifir
+        isAccounClosed=true;
+        System.out.println("Hesabiniz kapatilmistir. Mevcut mevduat hesap bilgilerini : "+getCariHesapBalance());
+    }
+
+
+
+
+
+    //ABSTRACT METHODLAR//////////////////////////
+    public abstract void tuzukKur();
+    public abstract void teminatSistemi();
+
+    public abstract void HesapAcmaBonusu(AccountType accountType);
 
 
 
@@ -98,13 +119,20 @@ public class Bank {
         }
     }
 
-    public String getAccountType() {
-        return accountType;
+    public double getCariHesapBalance() {
+        return cariHesapBalance;
     }
 
-    public void setAccountType(String accountType) {
-        this.accountType = accountType.toUpperCase();//hesabin turunu belirledik
+    public void setCariHesapBalance(double cariHesapBalance) {
+        this.cariHesapBalance = cariHesapBalance;
     }
+    //    public String getAccountType() {
+//        return accountType;
+//    }
+//
+//    public void setAccountType(String accountType) {
+//        this.accountType = accountType.toUpperCase();//hesabin turunu belirledik
+//    }
 
     public double getDepositeBonus() {
         return depositeBonus;

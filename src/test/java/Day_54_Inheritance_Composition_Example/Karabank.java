@@ -1,29 +1,8 @@
 package Day_54_Inheritance_Composition_Example;
 
 public class Karabank extends Bank{
-    public Karabank(double currentBalance, String accountType) {
+    public Karabank(double currentBalance, AccountType accountType) {
         super(currentBalance+100, accountType);
-
-        switch (getAccountType()) {
-            case "GOLD":
-                setDepositeBonus(80);
-                setWithdravExpence(90);
-                setReturnRate(1.4);
-                break;
-            case "SAVING":
-                setDepositeBonus(100);
-                setWithdravExpence(70);
-                setReturnRate(1.1);
-                break;
-            case "INTEREST":
-                setDepositeBonus(90);
-                setWithdravExpence(80);
-                setReturnRate(1.2);
-                break;
-            default:
-                System.out.println("GECERSIZ HESAP TURU");
-                break;
-        }
 
     }
 
@@ -50,6 +29,42 @@ public class Karabank extends Bank{
         }                                                                  // balance dan cikarildigi icin(islem ucreti ile birlikte)
     }
 
+    @Override
+    public void tuzukKur() {
+        System.out.println("Karabank Tuzuk sistemi");
+    }
+
+    @Override
+    public void teminatSistemi() {
+
+        System.out.println("Karabank teminat sistemi");
+    }
+
+    @Override
+    public void HesapAcmaBonusu(AccountType accountType) {
+
+        switch (accountType) {
+            case GOLD:
+                setDepositeBonus(80);
+                setWithdravExpence(90);
+                setReturnRate(1.4);
+                break;
+            case SAVING:
+                setDepositeBonus(100);
+                setWithdravExpence(70);
+                setReturnRate(1.1);
+                break;
+            case INTEREST:
+                setDepositeBonus(90);
+                setWithdravExpence(80);
+                setReturnRate(1.2);
+                break;
+            default:
+                System.out.println("GECERSIZ HESAP TURU");
+                break;
+        }
+
+    }
 
 
 }
