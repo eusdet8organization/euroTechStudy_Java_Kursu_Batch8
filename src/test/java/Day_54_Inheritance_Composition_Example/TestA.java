@@ -28,22 +28,22 @@ public class TestA {
         ismetBankHes2.deposite(500);
 
         //Akbank icin
-        System.out.println("ismet in yatirim hesabinin mevcut hali : "+ismetBankaHesabi.getCurrentBalance());
+        System.out.println("ismet in akbank saving yatirim hesabinin mevcut hali : "+ismetBankaHesabi.getCurrentBalance());
 
         //Karabank icin
-        System.out.println("ismet in yatirim hesabinin mevcut hali : "+ismetBankHes2.getCurrentBalance());
+        System.out.println("ismet in karabank altin yatirim hesabinin mevcut hali : "+ismetBankHes2.getCurrentBalance());
 
 
         ismetBankaHesabi.mevcutHesapKapatma();
         ismetBankHes2.mevcutHesapKapatma();
 
         //Akbank icin
-        System.out.println("ismet in yatirim hesabinin mevcut hali : "+ismetBankaHesabi.getCurrentBalance());
-        System.out.println("ismet in yatirim hesabinin mevcut hali : "+ismetBankaHesabi.getCariHesapBalance());
+        System.out.println("ismet in akbank saving yatirim hesabinin mevcut hali : "+ismetBankaHesabi.getCurrentBalance());
+        System.out.println("ismet in akbank mevduat hesabinin mevcut hali : "+ismetBankaHesabi.getCariHesapBalance());
 
         //Karabank icin
-        System.out.println("ismet in yatirim hesabinin mevcut hali : "+ismetBankHes2.getCurrentBalance());
-        System.out.println("ismet in yatirim hesabinin mevcut hali : "+ismetBankHes2.getCariHesapBalance());
+        System.out.println("ismet in karabank gold yatirim hesabinin mevcut hali : "+ismetBankHes2.getCurrentBalance());
+        System.out.println("ismet in karabank mevduat hesabinin mevcut hali : "+ismetBankHes2.getCariHesapBalance());
 
 
     }

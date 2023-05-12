@@ -3,7 +3,7 @@ package Day_54_Inheritance_Composition_Example;
 public class Karabank extends Bank{
     public Karabank(double currentBalance, AccountType accountType) {
         super(currentBalance+100, accountType);
-
+        HesapAcmaBonusu(accountType);
     }
 
 
