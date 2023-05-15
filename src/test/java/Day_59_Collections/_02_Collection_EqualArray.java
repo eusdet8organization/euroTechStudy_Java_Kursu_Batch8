@@ -40,6 +40,13 @@ public class _02_Collection_EqualArray {
         Arrays.equals(sehirler,klupler1); //Expected result and Actual result verify ediliyor
         System.out.println(Arrays.equals(sehirler,klupler1));//TRUE
 
+        boolean sonuc=Arrays.equals(sehirler,klupler1);
+
+        if (sonuc){
+            System.out.println("Listeler birbirine sit");
+        }else
+            System.out.println("Listeler birbirine esit degil");
+
 
         List<List<String >> listeler=new ArrayList<>();
 
@@ -87,18 +94,26 @@ public class _02_Collection_EqualArray {
 
         // personList.add("Gulden","Senior SDET",25);
 
+
+
+
+
+
         List<Object> list=new ArrayList<>();
+
         Person person5=new Person("aa","bb",12);
 
         list.add(person5);
         list.add(4);
         list.add("Ahmet");
 
+        System.out.println("list.get(0) = " + list.get(0));
+        System.out.println("list.get(1) = " + list.get(1));
+        System.out.println("list.get(2)= " + list.get(2));
 
 
 
-
-
+        System.out.println("list = " + list.toString());
 
 
         list.add(person1);//Bu birer obje ise , Classlarin BABASI olan OBJECT classina ait oluyor
@@ -106,10 +121,6 @@ public class _02_Collection_EqualArray {
         list.add(person3);
         list.add("Sayfa");
         list.add(5);
-
-
-
-
 
 
 
