@@ -6,9 +6,9 @@ public class Product implements Comparable<Product> {
     private double price;
 
     public Product(String name, double price) {
-        super();
         this.name = name;
         this.price = price;
+
     }
 
 
@@ -37,6 +37,8 @@ public class Product implements Comparable<Product> {
         return "Product [name=" + name + ", price=" + price + "]";
     }
 
+
+
     /*
       * bu yöntem 3 türden bir int döndürür:
       * 1-pozitif sayı -> bu ürün başka bir üründen daha büyüktür
@@ -44,15 +46,17 @@ public class Product implements Comparable<Product> {
       * 3-negatif sayı -> bu Ürün başka bir üründen daha küçüktür
      *
      */
-
     @Override
     public int compareTo(Product anotherProduct) {
 
         if (this.price > anotherProduct.price) {
+            System.out.println("Return 1 verenler");
             return 1;
         } else if (this.price == anotherProduct.price) {
+            System.out.println("Return 0 verenler");
             return 0;
         } else {
+            System.out.println("Return -1 verenler");
             return -1;
         }
 

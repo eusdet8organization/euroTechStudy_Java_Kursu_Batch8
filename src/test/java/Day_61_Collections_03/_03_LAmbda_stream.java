@@ -14,7 +14,7 @@ public class _03_LAmbda_stream {
         hs1.addAll(Arrays.asList(dizi));//Bu cast olmadan ekleme islemini yaptik
 
         //talk() --> Bu method ile yazdirma islemini yapabiliyorsunuz,
-       // hs1.stream().forEach(user::talk); //Bu syntex ile fonsiyonun sadece adi yaziliyor.
+       // hs1.stream().forEach(User::talk); //Bu syntex ile fonsiyonun sadece adi yaziliyor.
         // talk() DEGIL talk olarak yazilir ve "::" iki nokta ust uste iki kez yazilarak kullanilir
 
         hs1.stream().forEach(user-> System.out.println(user.hashCode()));
