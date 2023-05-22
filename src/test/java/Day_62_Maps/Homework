@@ -1,0 +1,4 @@
+ //TODO:Verilen bir string asagidaki gibi tanimlanmistir,  interview sorusu
+        String verilen="baabccdccdefeeffaa";
+
+       // ve beklenen cikti ---------> //4a2b4c2d3e3f
