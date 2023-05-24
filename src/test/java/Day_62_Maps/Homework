@@ -2,3 +2,29 @@
         String verilen="baabccdccdefeeffaa";
 
        // ve beklenen cikti ---------> //4a2b4c2d3e3f
+
+       '''// String verilen="baabccdccdefeeffaa";
+           // ve beklenen cikti ---------> //4a2b4c2d3e3f
+           String str="baabccdccdefeeffaa";
+           Object[] ArrayList;
+           //ArrayList [String] harfler=new ArrayList<>();
+               System.out.println(Arrays.toString(str.split("")));
+           /*   int count=1;
+              for (int i = 1; i <str.length() ; i++) {
+                  if (str.charAt(i)==str.charAt(i-1)){
+                      count++;
+              }else {
+                  }
+            */
+           Map<Character,Integer>tekrarSayilari=tekrarSayilariniBul(str);
+               for (Map.Entry<Character,Integer>s:tekrarSayilari.entrySet()){
+               System.out.print(s.getKey()+""+s.getValue());
+           }
+       }
+           public static Map<Character,Integer>tekrarSayilariniBul(String str){
+               Map<Character,Integer>tekrarSayilari=new HashMap<>();
+               for (char c:str.toCharArray()){
+                   tekrarSayilari.put(c,tekrarSayilari.getOrDefault(c,0)+1);
+               }
+               return tekrarSayilari;
+           }
