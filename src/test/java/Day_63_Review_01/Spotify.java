@@ -102,7 +102,11 @@ public class Spotify {
        List<Tester> filterListTest= scrumTeam.testers.stream().filter(user->user.getJobTitle().contains("Senior")).toList();
         System.out.println("filterListTest = " + filterListTest);
 
-       // List<Developers> mapListDeveloper=scrumTeam.developers.stream().map(user->user.getSalary())
+       // List<Tester> mapListDeveloper=scrumTeam.testers.stream().map(user->new Developers("Ayse",))
+
+                //Map--> Map<K,V>
+
+        int[][] tablo=new int[5][];
 
 
     }
